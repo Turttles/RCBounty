@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitTask;
 
 import net.milkbowl.vault.economy.Economy;
 
@@ -21,6 +22,8 @@ public class Main extends JavaPlugin {
         } else {
         	getLogger().info("Successfully loaded dependencies..");
         }
+		BukkitTask BountyAnnouncer = new BountyHandler(this).runTaskTimer(this, 40, 200);
+		new BountyHandler(this);
 		
 	}
 	
@@ -44,6 +47,11 @@ public class Main extends JavaPlugin {
         }
         econ = rsp.getProvider();
         return econ != null;
+    }
+    
+    public void setup() {
+    	
+    	//TODO add cfiles 
     }
 
 
