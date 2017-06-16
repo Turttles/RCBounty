@@ -16,11 +16,11 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		getLogger().info("[RCB] Loading dependencies...");
         if (!setupEconomy() ) {
-        	getLogger().severe("No Vault Dependencies found! Disabling... ");
+        	getLogger().severe("[ERROR] No Vault Dependencies found! Disabling... ");
             getServer().getPluginManager().disablePlugin(this);
             return;
         } else {
-        	getLogger().info("Successfully loaded dependencies..");
+        	getLogger().info("[RCB] Successfully loaded dependencies..");
         }
 		BukkitTask BountyAnnouncer = new BountyHandler(this).runTaskTimer(this, 40, 200);
 		new BountyHandler(this);
