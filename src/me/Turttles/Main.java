@@ -34,7 +34,7 @@ public class Main extends JavaPlugin {
 		
 		
 		
-	}
+	}//hey issa me
 	
 	
     private boolean setupEconomy() {
